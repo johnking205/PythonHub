@@ -1,9 +1,12 @@
 #Two Sum
-
-def twoSum(nums, target):
-    for i in range(0, len(nums)-1):
-        for j in range(0, len(nums)-1):
-            if nums[i] + nums[j] == target and i != j:
-                return([i, j])
-
-print(twoSum([2,7,11,15],9))
+class Solution:
+    def twoSum(self, nums, target):
+        d = [] * len(nums)
+        i = 0
+        for num in nums:
+            if target - num in d:
+                return d.index(target-num), i
+            d.append(num)
+            i += 1
+x = Solution()
+print(x.twoSum([3,2,4],6))
